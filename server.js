@@ -8,9 +8,22 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
 
+// Parse CORS origins (supports comma-separated list)
+const allowedOrigins = CORS_ORIGIN === '*' 
+  ? '*' 
+  : CORS_ORIGIN.split(',').map(origin => origin.trim());
+
 // Middleware
 app.use(cors({
-  origin: CORS_ORIGIN
+  origin: allowedOrigins === '*' 
+    ? '*' 
+    : (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      }
 }));
 app.use(express.json());
 
