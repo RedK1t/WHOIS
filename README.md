@@ -270,3 +270,14 @@ pm2 start server.js --name whois-api
 ## License
 
 ISC
+
+
+## Docker
+
+```bash
+docker build -t whois .
+```
+
+```bash
+docker run -d -p 3000:3000 --name wis whois
+```
