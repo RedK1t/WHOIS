@@ -1,4 +1,17 @@
-# WHOIS Backend API
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RedK1t/RedKit/main/docs/assets/logo-light.svg">
+    <img src="https://raw.githubusercontent.com/RedK1t/RedKit/main/docs/assets/logo-dark.svg" alt="RedKit" width="96">
+  </picture>
+</p>
+
+<h1 align="center">RedKit WHOIS</h1>
+
+<p align="center">Domain WHOIS and DNS lookup API.<br>
+Part of <a href="https://github.com/RedK1t/RedKit"><b>RedKit</b></a>, a modular, web-based penetration-testing framework.</p>
+
+---
+
 
 Express backend server that provides WHOIS domain lookup functionality using the whoiser library. Designed to be consumed by React applications.
 
